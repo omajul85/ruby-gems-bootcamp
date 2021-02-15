@@ -2,5 +2,7 @@
   %h1 StaticPages#landing_page
   %p Find me in app/views/static_pages/landing_page.html.erb
   = link_to 'Privacy Policy', privacy_policy_path
-  %i.far.fa-address-book
-  %i.fab.fa-github
+
+  = link_to courses_path, class: 'btn btn-primary' do
+    %i.fas.fa-book-open
+    Courses
