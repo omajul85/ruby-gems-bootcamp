@@ -1,4 +1,6 @@
 class Course < ApplicationRecord
+  LEVELS = %i[Beginner Intermediate Advanced]
+  LANGUAGES = %i[English Spanish French]
   has_rich_text :description
 
   belongs_to :user
@@ -8,5 +10,15 @@ class Course < ApplicationRecord
 
   def to_s
     title
+  end
+
+  class << self
+    def languages
+      LANGUAGES.map { |language| [language, language] }
+    end
+
+    def levels
+      LEVELS.map { |level| [level, level] }
+    end
   end
 end
